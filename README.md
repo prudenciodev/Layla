@@ -4,7 +4,7 @@ Assistente para modelos de IA, arquivos, skills e ferramentas locais.
 
 ## Download
 
-[Baixar instalador oficial v1.0.8](https://github.com/prudenciodev/Layla/releases/download/v1.0.8/Layla-Setup.exe)
+[Baixar instalador oficial v1.0.9](https://github.com/prudenciodev/Layla/releases/download/v1.0.9/Layla-Setup.exe)
 
 Windows 10/11 x64. A primeira instalação requer internet e baixa Node.js, WebView2 e dependências. Git, pnpm e conta GitHub não são necessários para instalar. Modelos de IA são configurados pelo usuário após a instalação.
 
@@ -22,7 +22,22 @@ O pacote contém preferências iniciais, sem contas, chaves ou histórico do des
 
 ## Verificação
 
-SHA-256 do instalador: `b8381b698852e449a160a86eaa59bde73b29693b538fce95d8692d6835de4a21`
+SHA-256 do instalador: `a45a842f413e0f2be1873354e0d49d3fc988dc325e961adb1b96c91a0d64d1aa`
+
+## Layla 1.0.9
+
+- **Atualizador Rápido In-Place (Delta Update):** Sistema de atualização leve em segundos via `Layla-Update.zip`, sem necessidade de baixar o instalador completo a cada nova versão.
+- **Desinstalador Profundo (Zero Resíduos):** Limpeza cirúrgica e completa de diretórios de dados (`.layla`, `.dsh`), registros locais, atalhos, processos e regras de firewall do Windows.
+- **Instalação e Runtime Isolados:** Sanitização estrita de `PATH`, `NODE_PATH` e `PNPM_HOME` nos inicializadores, evitando quebras de dependência por versões de Node ou pnpm pré-instaladas no sistema do usuário.
+- **Descoberta e Busca de Modelos Inteligente:** Normalização automática de IDs, descarte de modelos não conversacionais (embeddings/TTS), eliminação de duplicidades e formatação de nomes legíveis.
+- **Modo Automático Aperfeiçoado (Auto-Best Coding):** Seleção contínua e reativa do melhor modelo para desenvolvimento de software sem interferir no foco do usuário.
+- **Compatibilidade Plena com Google AI Studio & Thinking Models:** Resolução precisa de rotas para `/v1beta/openai` e tratamento seguro de deltas vazios em modelos de pensamento (Gemini 2.0 / 2.5 Flash / Pro).
+- **Prefill do Assistente (`assistantPrefill`):** Suporte nativo para direcionamento de início de resposta em modelos compatíveis.
+- **Terminal e Subprocessos 100% UTF-8:** Imposição nativa de `chcp 65001`, `PYTHONIOENCODING=utf-8` e `PYTHONUTF8=1`, extinguindo erros de acentuação e caracteres no Windows.
+- **Medição Calibrada de Tokens:** Estimativa ajustada para português e idiomas multilíngues, impedindo cortes inadvertidos de contexto.
+- **Conexão WebSocket com Heartbeat Ativo:** Detecção proativa de desconexões e recuperação automática após suspensão do computador.
+- **Suporte Avançado a Proxies:** Suporte para proxies HTTP/HTTPS autenticados e SOCKS5 com propagação global no runtime.
+- **Nova Central de Ajuda:** Interface revitalizada com documentação detalhada de comandos, arquitetura e atalhos.
 
 ## Layla 1.0.8
 
