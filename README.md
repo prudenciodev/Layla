@@ -4,7 +4,7 @@ Assistente para modelos de IA, arquivos, skills e ferramentas locais.
 
 ## Download
 
-[Baixar instalador oficial v1.0.9](https://github.com/prudenciodev/Layla/releases/download/v1.0.9/Layla-Setup.exe)
+[Baixar instalador oficial v1.1.0](https://github.com/prudenciodev/Layla/releases/download/v1.1.0/Layla-Setup.exe)
 
 Windows 10/11 x64. A primeira instalação requer internet e baixa Node.js, WebView2 e dependências. Git, pnpm e conta GitHub não são necessários para instalar. Modelos de IA são configurados pelo usuário após a instalação.
 
@@ -22,7 +22,16 @@ O pacote contém preferências iniciais, sem contas, chaves ou histórico do des
 
 ## Verificação
 
-SHA-256 do instalador: `a45a842f413e0f2be1873354e0d49d3fc988dc325e961adb1b96c91a0d64d1aa`
+SHA-256 do instalador: `94043e0c56501bc89af9d105e830f1086e1f7abfdb2872d90a7b16868dc32f43`
+
+## Layla 1.1.0
+
+- **Correção Definitiva do Erro 500 / Código Vermelho em Chamadas de Função (OpenAI / AgentRouter / DeepSeek):** Sanitização e padronização integral de esquemas JSON de ferramentas com garantia estrita de `required: []` mesmo em ferramentas sem argumentos obrigatórios (`get_goal`, `job_list`), eliminando a rejeição por validadores de gateway upstream.
+- **Expurgo Físico Real de Sessões Removidas (Fim das Ghost Sessions):** A ação de exclusão no gerenciador de workspaces agora realiza a destruição física imediata dos diretórios e arquivos compactados `.jsonl.zstd` no disco rígido, impedindo a reindexação de conversas antigas apagadas.
+- **Higienização de Entrada de Áudio:** Remoção de mocks de texto estáticos em falhas do microfone no WebView2; tratamento limpo e confiável de drafts e duração de áudio no compositor sem poluir a caixa de texto com strings artificiais.
+- **Harmonização de Temas & Tokens CSS (Design System DSH):** Refatoração da Central de Ajuda e inventário de plugins para uso de variáveis semânticas de tokens (`var(--dsw-alias-*)`), assegurando legibilidade, contraste e estética perfeita em qualquer tema claro, escuro ou customizado.
+- **Prevenção Estrita de Duplicidades na Interface:** Normalização de identificadores e deduplicação de modelos de IA e sessões de trabalho no menu lateral e seletores.
+- **Recuperação Automática de Porta & Processos Zumbis:** Detecção proativa e encerramento de processos órfãos retendo a porta 3080 no Windows ao iniciar a aplicação.
 
 ## Layla 1.0.9
 
