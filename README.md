@@ -4,7 +4,7 @@ Assistente para modelos de IA, arquivos, skills e ferramentas locais.
 
 ## Download
 
-[Baixar instalador oficial v1.1.0](https://github.com/prudenciodev/Layla/releases/download/v1.1.0/Layla-Setup.exe)
+[Baixar instalador oficial v1.1.1](https://github.com/prudenciodev/Layla/releases/download/v1.1.1/Layla-Setup.exe)
 
 Windows 10/11 x64. A primeira instalação requer internet e baixa Node.js, WebView2 e dependências. Git, pnpm e conta GitHub não são necessários para instalar. Modelos de IA são configurados pelo usuário após a instalação.
 
@@ -22,7 +22,16 @@ O pacote contém preferências iniciais, sem contas, chaves ou histórico do des
 
 ## Verificação
 
-SHA-256 do instalador: `94043e0c56501bc89af9d105e830f1086e1f7abfdb2872d90a7b16868dc32f43`
+SHA-256 do instalador: `de9816c189265eb0f046e21cc04416ad1c1323de3b580c18b294ad62f1758965`
+
+## Layla 1.1.1
+
+- **Correção Definitiva de Travamento e Encerramento na Instalação:** Eliminação de exceções fatais em `ssPostInstall` no Inno Setup. O instalador garante a criação completa de todos os atalhos na Área de Trabalho e Menu Iniciar, sem abortar a instalação.
+- **Redimensionamento Responsivo & Correção de DPI no Launcher Nativo:** Substituição de dimensões estáticas por cálculo dinâmico baseado na área de trabalho ativa (`SystemParameters.WorkArea`), impedindo cortes da interface em telas e monitores com escala de 125% e 150%.
+- **Integração do Motor Irrestrito Nativo v68 (@prudenciodev):** Inclusão de 31 módulos catalogados sob a assinatura oficial do Prudencio Dev, com ativação dupla transparente (Plugin Cordis com hook `system-prompt/assemble` e Skill Standalone).
+- **Correção de URLs Duplicadas e Slugs no DeepSeek / AgentRouter:** Sanitização estrita de `baseUrl` (`normalizeBaseUrl`) evitando duplicações `/chat/completions/chat/completions` (HTTP 404) e atualização de slugs oficiais de modelos.
+- **Launcher Multiplataforma (`iniciar-layla.sh`):** Suporte nativo a execução em Linux, macOS e Android (Termux) com detecção automática de portas e abertura de navegador.
+- **Runtime Isolado e Pré-instalado:** Inclusão de runtime `pnpm` diretamente na pasta privada, eliminando bloqueios por políticas de execução restritivas do PowerShell.
 
 ## Layla 1.1.0
 
