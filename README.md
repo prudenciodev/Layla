@@ -5,11 +5,17 @@
 
 ---
 
-## 📥 Download Oficial (v1.1.3)
+## 📥 Download Oficial (v1.1.4)
 
-- **[👉 Clique aqui para baixar o instalador oficial v1.1.3 (Layla-Setup.exe)](https://github.com/prudenciodev/Layla/releases/download/v1.1.3/Layla-Setup.exe)**
-- **SHA-256 do instalador:** `90343ef91a0b24c06a32c745cf71a998e3e1abfcbdc56371e135ea7e2d28959c`
-- **Tamanho:** `7.50 MB`
+- **🪟 Windows (Instalador Oficial):** [👉 Baixar Layla-Setup.exe](https://github.com/prudenciodev/Layla/releases/download/v1.1.4/Layla-Setup.exe) (`873b62d7cd4ffe672c4a2525773bfea0c3a1ed3fa4a03215833a6605a9a39223`)
+- **🐧 Linux & 📱 Termux (Comando 1-Linha):** `curl -fsSL https://raw.githubusercontent.com/prudenciodev/Layla/main/install.sh | bash`
+- **🐧 Linux & 📱 Termux (Download Manual):** [👉 Baixar Layla-linux-termux.tar.gz](https://github.com/prudenciodev/Layla/releases/download/v1.1.4/Layla-linux-termux.tar.gz)
+
+## Layla 1.1.4
+
+- **Suporte Oficial Completo para Android (Termux) & Linux:** Disponibilização do pacote universal de distribuição `Layla-linux-termux.tar.gz` e script de instalação em 1 linha (`install.sh`), eliminando a necessidade de acesso ou clonagem de repositório privado no celular ou no servidor Linux.
+- **Instalador Automático em 1 Linha (`curl | bash`):** Novo script `install.sh` que detecta a plataforma (Termux/Linux), instala dependências necessárias automaticamente, baixa o release oficial mais recente e cria o comando global `layla`.
+- **Inclusão Nativa das Skills no Pacote de Instalação:** Adição explícita de `iniciar-layla.sh` e da pasta `config_modelo\skills` no instalador Inno Setup e no manifesto do pacote de distribuição.
 
 ## Layla 1.1.3
 
@@ -86,7 +92,7 @@ Compatibilidade da distribuição: Windows 10/11 x64, com internet na primeira i
 
 ## 🌟 Visão Geral da Ferramenta
 
-**Layla AI** é uma assistente de Inteligência Artificial de última geração, autônoma, modular e privativa, desenvolvida para atuar diretamente no seu ambiente de trabalho ou servidor. Diferente de soluções web fechadas, a Layla tem acesso a ferramentas de linha de comando, manipulador de arquivos, automação de tarefas, navegador embutido e matriz de execução irrestrita.
+**Layla AI** é uma assistente de Inteligência Artificial de última geração, autônoma, modular e privativa, desenvolvida para atuar diretamente no seu ambiente de trabalho, servidor ou smartphone Android. Diferente de soluções web fechadas, a Layla tem acesso a ferramentas de linha de comando, manipulador de arquivos, automação de tarefas, navegador embutido e matriz de execução irrestrita.
 
 ### 🛡️ Principais Diferenciais:
 - **Total Privacidade e Soberania de Dados:** Todos os seus dados, configurações, histórico de conversas e chaves de API permanecem gravados exclusivamente no seu dispositivo (em `~/.layla`). Nenhuma informação é enviada a servidores intermediários proprietários.
@@ -101,9 +107,9 @@ Compatibilidade da distribuição: Windows 10/11 x64, com internet na primeira i
 
 Para garantir máxima transparência e funcionamento sem exigir configurações manuais complexas:
 
-1. **Runtime Node.js LTS (v24):** No Windows, o instalador isola o Node.js em uma pasta privada interna (`runtime/node-v24.21.0-win-x64`), sem poluir suas variáveis de ambiente globais ou exigir privilégios de administrador.
-2. **Microsoft WebView2 Runtime:** Componente de interface de desktop nativa ultra leve (utiliza o motor Chromium nativo do Windows, consumindo muito menos memória que soluções em Electron).
-3. **Gerenciador de Pacotes PNPM (v11.7.0):** Instalado no runtime privado para gerenciar as dependências e módulos locais do agente de forma eficiente com deduplicação de disco.
+1. **Runtime Node.js LTS (v24):** No Windows, o instalador isola o Node.js em uma pasta privada interna (`runtime/node-v24.21.0-win-x64`), sem poluir suas variáveis de ambiente globais ou exigir privilégios de administrador. No Termux/Linux, utiliza o Node.js do sistema.
+2. **Microsoft WebView2 Runtime (Windows):** Componente de interface de desktop nativa ultra leve (utiliza o motor Chromium nativo do Windows, consumindo muito menos memória que soluções em Electron).
+3. **Gerenciador de Pacotes PNPM (v11.7.0):** Executado em modo privado para gerenciar as dependências e módulos locais do agente de forma eficiente com deduplicação de disco.
 4. **Diretório de Configurações do Usuário (`~/.layla` ou `%USERPROFILE%\.layla`):**
    - `settings.yaml`: Suas preferências de tema e provedores de IA cadastrados.
    - `skills/`: Habilidades instaladas (incluindo `layla-unrestricted` e controle do sistema).
@@ -114,28 +120,31 @@ Para garantir máxima transparência e funcionamento sem exigir configurações 
 
 ## 🚀 Guia de Instalação Passo a Passo
 
-### 1. 🪟 Windows 10 e Windows 11 (64 bits)
+### 1. 📱 Android (via Termux)
 
-#### Opção A — Instalador Oficial Gráfico (.exe) [Recomendado]
-1. Acesse os [Releases Oficiais da Layla](https://github.com/prudenciodev/Layla/releases).
-2. Baixe o instalador mais recente: `Layla-Setup.exe`.
-3. Dê dois cliques em `Layla-Setup.exe` e siga o assistente de instalação:
-   - O instalador irá preparar o Node.js privado, WebView2 e todas as dependências automaticamente em segundo plano.
-   - Um atalho **Layla** será criado na sua Área de Trabalho e no Menu Iniciar.
-4. Ao concluir, abra o atalho **Layla** na Área de Trabalho para iniciar.
+Você pode executar o motor completo da Layla diretamente no seu smartphone ou tablet Android sem precisar de root, utilizando o emulador de terminal **Termux**.
 
-#### Opção B — Instalação Manual pelo Terminal (Código Fonte)
-Se preferir clonar o repositório de código fonte e rodar diretamente:
-```powershell
-# 1. Clone o repositório do código fonte
-git clone https://github.com/prudenciodev/Layla-cod-fonte.git
-cd Layla-cod-fonte
+#### ⚡ Instalação Automática em 1 Linha (Recomendada):
+Abra o **Termux** e cole o comando abaixo:
+```bash
+curl -fsSL https://raw.githubusercontent.com/prudenciodev/Layla/main/install.sh | bash
+```
+> O script atualizará os pacotes necessários, baixará a distribuição oficial mais recente da Layla diretamente dos releases públicos, configurará o atalho e iniciará o servidor abrindo o navegador do celular em `http://127.0.0.1:3080`.
 
-# 2. Execute a instalação de dependências e configuração
-.\02_Instalar_Dependencias.bat
+#### 📦 Instalação Manual (Alternativa):
+```bash
+# 1. Instalar pacotes necessários
+pkg update -y && pkg install -y curl tar nodejs
+npm install -g pnpm@11.7.0
 
-# 3. Inicie a assistente
-.\03_Iniciar_Layla.bat
+# 2. Baixar o pacote oficial de release
+curl -LO https://github.com/prudenciodev/Layla/releases/latest/download/Layla-linux-termux.tar.gz
+
+# 3. Extrair e iniciar
+mkdir -p ~/layla && tar -xzf Layla-linux-termux.tar.gz -C ~/layla
+cd ~/layla
+chmod +x iniciar-layla.sh
+./iniciar-layla.sh
 ```
 
 ---
@@ -144,80 +153,50 @@ cd Layla-cod-fonte
 
 No Linux, a Layla opera com servidor web integrado de alto desempenho, podendo ser acessada pelo seu navegador padrão em `http://127.0.0.1:3080`.
 
-#### Passo a Passo no Terminal:
+#### ⚡ Instalação Automática em 1 Linha (Recomendada):
 ```bash
-# 1. Atualizar repositórios do sistema
-sudo apt update && sudo apt upgrade -y
-
-# 2. Instalar Git, cURL e Node.js LTS (v22 ou v24)
-sudo apt install -y git curl
-
-# Instalação do Node.js LTS via NodeSource (se ainda não tiver Node 22+)
-curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
-sudo apt install -y nodejs
-
-# 3. Instalar o gerenciador pnpm globalmente
-sudo npm install -g pnpm@11.7.0
-
-# 4. Clonar o repositório da Layla
-git clone https://github.com/prudenciodev/Layla-cod-fonte.git layla
-cd layla
-
-# 5. Dar permissão de execução ao script de inicialização
-chmod +x iniciar-layla.sh
-
-# 6. Iniciar a Layla
-./iniciar-layla.sh
+curl -fsSL https://raw.githubusercontent.com/prudenciodev/Layla/main/install.sh | bash
 ```
 
-Ao iniciar, o script instalará as dependências na primeira execução e abrirá automaticamente o navegador em `http://127.0.0.1:3080`.
+#### 📦 Instalação Manual no Terminal:
+```bash
+# 1. Instalar Node.js LTS (v22+) e ferramentas
+sudo apt update && sudo apt install -y curl tar nodejs npm
+sudo npm install -g pnpm@11.7.0
+
+# 2. Baixar o pacote oficial da Layla
+curl -LO https://github.com/prudenciodev/Layla/releases/latest/download/Layla-linux-termux.tar.gz
+
+# 3. Extrair e iniciar
+mkdir -p ~/layla && tar -xzf Layla-linux-termux.tar.gz -C ~/layla
+cd ~/layla
+chmod +x iniciar-layla.sh
+./iniciar-layla.sh
+```
 
 ---
 
-### 3. 📱 Android (via Termux)
+### 3. 🪟 Windows 10 e Windows 11 (64 bits)
 
-Você pode executar o motor completo da Layla diretamente no seu smartphone ou tablet Android sem precisar de root, utilizando o emulador de terminal **Termux**.
+#### Opção A — Instalador Oficial Gráfico (.exe) [Recomendado]
+1. Acesse os [Releases Oficiais da Layla](https://github.com/prudenciodev/Layla/releases).
+2. Baixe o instalador mais recente: `Layla-Setup.exe`.
+3. Execute `Layla-Setup.exe` e siga as etapas na tela. O instalador configura o Node.js privado, WebView2 e atalhos na Área de Trabalho e Menu Iniciar.
+4. Ao concluir, abra o atalho **Layla** na Área de Trabalho.
 
-#### Passo a Passo no Termux:
-1. Abra o **Termux** (baixe a versão mais recente pelo F-Droid ou GitHub oficial do Termux).
-2. Execute os comandos abaixo linha por linha:
-
-```bash
-# 1. Atualizar os pacotes do Termux
-pkg update -y && pkg upgrade -y
-
-# 2. Instalar Git e Node.js
-pkg install -y git nodejs
-
-# 3. Instalar o pnpm globalmente
-npm install -g pnpm@11.7.0
-
-# 4. Clonar o repositório da Layla
-git clone https://github.com/prudenciodev/Layla-cod-fonte.git layla
-cd layla
-
-# 5. Dar permissão de execução ao script de inicialização
-chmod +x iniciar-layla.sh
-
-# 6. Iniciar o servidor
-./iniciar-layla.sh
+#### Opção B — Instalação pelo Código Fonte (Desenvolvedores)
+```powershell
+git clone https://github.com/prudenciodev/Layla-cod-fonte.git
+cd Layla-cod-fonte
+.\02_Instalar_Dependencias.bat
+.\03_Iniciar_Layla.bat
 ```
-
-3. Assim que o terminal exibir:
-   ```
-   ============================================================================
-    Servidor pronto no Termux!
-    Abra no navegador do celular: http://127.0.0.1:3080
-   ============================================================================
-   ```
-4. Abra o Chrome, Firefox ou o navegador de sua preferência no celular e acesse:  
-   👉 **`http://127.0.0.1:3080`**
 
 ---
 
 ## ⚙️ Como Configurar o Modelo de Inteligência Artificial
 
-A Layla foi concebida para oferecer liberdade de escolha. Ela não vem amarrada a nenhum modelo proprietário obrigatório. Você pode utilizar o modelo que preferir:
+A Layla foi concebida para oferecer liberdade total de escolha. Ela não vem amarrada a nenhum modelo proprietário obrigatório:
 
 1. Abra a Layla (no aplicativo Desktop no Windows ou pelo navegador em `http://127.0.0.1:3080`).
 2. Clique no menu de engrenagem **Configurações** no canto superior ou lateral.
