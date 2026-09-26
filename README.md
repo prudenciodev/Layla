@@ -1,28 +1,35 @@
-# 💜 Layla AI
+# Layla AI
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/prudenciodev/Layla-cod-fonte/main/config_modelo/logo_prudencio.png" alt="Layla AI Logo" width="128" height="128" />
+  <img src="assets/logo.png" alt="Layla AI" width="128" height="128" />
 </p>
 
 <p align="center">
-  <strong>Assistente Autônoma de Inteligência Artificial para Automação, Código, Terminal e Sistema Multiplataforma.</strong><br>
-  <em>100% Local-First • Motor Irrestrito Nativo v68 • Suporte a Modelos Locais & Nuvem • Windows, Linux e Android (Termux)</em>
+  <strong>Assistente Autonoma de Inteligencia Artificial para Engenharia de Software, Automacao e Controle de Sistema Multiplataforma.</strong><br>
+  <em>Arquitetura Local-First | Motor Irrestrito Nativo v68 | Compatibilidade Universal de Modelos e Plataformas</em>
 </p>
 
 <p align="center">
-  <a href="https://github.com/prudenciodev/Layla/releases/latest"><img src="https://img.shields.io/badge/Versão-1.1.4-blueviolet?style=for-the-badge&logo=github" alt="Versão 1.1.4"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/Licença-MIT-green?style=for-the-badge" alt="Licença MIT"></a>
-  <a href="https://instagram.com/prudenciodev"><img src="https://img.shields.io/badge/Instagram-@prudenciodev-E4405F?style=for-the-badge&logo=instagram" alt="Instagram"></a>
-  <a href="https://youtube.com/@prudenciodev"><img src="https://img.shields.io/badge/YouTube-@prudenciodev-FF0000?style=for-the-badge&logo=youtube" alt="YouTube"></a>
+  <img src="https://img.shields.io/badge/Versao-1.1.4-1f6feb?style=flat-square&logo=github" alt="Versao 1.1.4" />
+  <img src="https://img.shields.io/badge/Licenca-MIT-2ea44f?style=flat-square" alt="Licenca MIT" />
+  <img src="https://img.shields.io/badge/Plataformas-Windows%20|%20Linux%20|%20Android%20|%20iOS%20|%20CLI-0969da?style=flat-square" alt="Plataformas" />
+  <img src="https://img.shields.io/badge/Privacidade-Zero%20Telemetria-success?style=flat-square" alt="Zero Telemetria" />
+  <img src="https://img.shields.io/badge/Autor-Prudencio%20Dev-58a6ff?style=flat-square" alt="Autor" />
+</p>
+
+<p align="center">
+  <a href="https://instagram.com/prudenciodev"><img src="https://img.shields.io/badge/Instagram-@prudenciodev-E4405F?style=flat-square&logo=instagram&logoColor=white" alt="Instagram" /></a>
+  <a href="https://youtube.com/@prudenciodev"><img src="https://img.shields.io/badge/YouTube-@prudenciodev-FF0000?style=flat-square&logo=youtube&logoColor=white" alt="YouTube" /></a>
+  <a href="https://github.com/prudenciodev/Layla"><img src="https://img.shields.io/badge/Repositorio-prudenciodev/Layla-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>
 </p>
 
 ---
 
-## 📥 Download Oficial (v1.1.4)
+## Download Oficial (v1.1.4)
 
-- **🪟 Windows (Instalador Oficial):** [👉 Baixar Layla-Setup.exe](https://github.com/prudenciodev/Layla/releases/download/v1.1.4/Layla-Setup.exe) (`873b62d7cd4ffe672c4a2525773bfea0c3a1ed3fa4a03215833a6605a9a39223`)
-- **🐧 Linux & 📱 Termux (Comando 1-Linha):** `curl -fsSL https://raw.githubusercontent.com/prudenciodev/Layla/main/install.sh | bash`
-- **🐧 Linux & 📱 Termux (Download Manual):** [👉 Baixar Layla-linux-termux.tar.gz](https://github.com/prudenciodev/Layla/releases/download/v1.1.4/Layla-linux-termux.tar.gz)
+- **Windows (Instalador Oficial):** [Baixar Layla-Setup.exe](https://github.com/prudenciodev/Layla/releases/download/v1.1.4/Layla-Setup.exe) (`873b62d7cd4ffe672c4a2525773bfea0c3a1ed3fa4a03215833a6605a9a39223`)
+- **Linux e Termux / Android (Comando 1-Linha):** `curl -fsSL https://raw.githubusercontent.com/prudenciodev/Layla/main/install.sh | bash`
+- **Linux e Termux (Download Manual do Arquivo):** [Baixar Layla-linux-termux.tar.gz](https://github.com/prudenciodev/Layla/releases/download/v1.1.4/Layla-linux-termux.tar.gz)
 
 ## Layla 1.1.4
 
@@ -103,143 +110,105 @@ Compatibilidade da distribuição: Windows 10/11 x64, com internet na primeira i
 
 ---
 
-## 🌟 O que é a Layla AI?
+## 1. Visao Geral da Arquitetura
 
-A **Layla AI** não é apenas uma janela de chat convencional. Trata-se de um **agente de inteligência artificial autônomo** projetado para interagir diretamente com o seu ambiente operacional, seja no computador pessoal, em servidores na nuvem ou no próprio smartphone Android.
+A **Layla AI** e um agente autono de inteligencia artificial concebido para operar diretamente no ambiente operacional do usuario. Diferente de plataformas baseadas exclusivamente em navegadores remotos, a Layla possui integracao direta com ferramentas de sistema, terminais de comando, arvore de arquivos e automacao de processos.
 
-Enquanto chatbots tradicionais ficam restritos ao navegador, a Layla tem capacidade de **agir**: ela pode ler arquivos, criar projetos inteiros, editar códigos linha por linha, executar comandos de terminal, automatizar tarefas diárias e navegar pela web para coletar dados em tempo real.
+### Pilares Tecnicos da Plataforma:
 
-### 🛡️ Principais Diferenciais:
-
-- **🔒 Soberania Total & Privacidade (Local-First):** Seus arquivos, conversas, workspaces e chaves de API nunca são enviados a servidores proprietários intermediários. Tudo fica salvo localmente no seu dispositivo na pasta `~/.layla`.
-- **⚡ Motor Irrestrito Nativo v68:** Equipado com matriz de 31 módulos de engenharia sintética desenvolvida por **@prudenciodev**, permitindo tarefas avançadas de análise técnica, auditoria de segurança, engenharia reversa e programação profunda sem bloqueios artificiais de filtros ou recusas desnecessárias.
-- **🧠 Liberdade Total de Modelos (Nuvem e Offline):** Use o modelo que preferir! Conecte-se a provedores em nuvem (OpenAI, Anthropic Claude, DeepSeek, Google Gemini, Groq, OpenRouter) ou rode modelos **100% gratuitos e offline** usando o **Ollama** ou **LM Studio**.
-- **🌐 Ecossistema Multiplataforma Unificado:**
-  - **🪟 Windows 10 e 11:** Aplicativo desktop nativo com aceleração gráfica via Microsoft WebView2 (consumo de memória muito menor que soluções em Electron).
-  - **🐧 Linux & WSL:** Servidor web rápido acessível pelo seu navegador favorito em `http://127.0.0.1:3080`.
-  - **📱 Android (Termux):** Roda direto no seu celular ou tablet sem necessidade de root, com acesso a navegador móvel e terminal.
-- **🧩 Sistema de Habilidades (Skills):** Expansível através de arquivos modulares em Markdown (`SKILL.md`), permitindo ensinar novos fluxos, regras de negócio e automações para a assistente.
+- **Soberania de Dados (Local-First):** Nenhum historico de conversas, chaves de API, arquivos ou telemetria sao enviados a servidores intermediarios proprietarios. Todos os artefatos de persistencia sao armazenados no sistema de arquivos local (`~/.layla` ou `%USERPROFILE%\.layla`).
+- **Motor Irrestrito Nativo v68:** Matriz integrada de 31 modulos tecnicos desenvolvida por **@prudenciodev**, permitindo operacoes avancadas de engenharia reversa, auditoria de seguranca de software, analise de binarios e desenvolvimento profundo sem filtros artificiais ou interrupcoes.
+- **Isolamento de Seguranca:** O servidor local escuta por padrao na interface de loopback (`127.0.0.1`), garantindo que a assistente permaneca inacessivel por outros dispositivos na rede, a menos que explicitamente configurada pelo usuario.
+- **Telemetria Desativada:** Variavel de ambiente `DSH_TELEMETRY_DISABLED=1` ativada nativamente em todos os inicializadores.
 
 ---
 
-## 🎯 Como Usar a Ferramenta no Dia a Dia (Guia Prático)
+## 2. Compatibilidade Multiplataforma e Dispositivos
 
-### 1. Conhecendo a Interface
+A Layla AI foi desenhada com arquitetura modular que viabiliza execucao nativa ou acesso remoto em qualquer sistema operacional e dispositivo:
 
-Ao iniciar a Layla, você terá acesso à interface de controle:
-- **Painel Central de Chat:** Onde você conversa com a Layla, visualiza o raciocínio dela, passos de execução e respostas com formatação rica em Markdown.
-- **Painel de Ações & Ferramentas:** Exibe em tempo real os comandos de terminal executados, arquivos lidos ou criados e pesquisas na web realizadas.
-- **Workspace Ativo:** Indica a pasta do seu computador onde a Layla está operando no momento. Qualquer arquivo criado ou editado será salvo diretamente nessa pasta.
-
----
-
-### 2. Configurando seu Modelo de IA
-
-A Layla funciona com dois tipos de modelos. Você pode escolher o que melhor se adapta à sua máquina:
-
-#### 🟢 Opção A — Modelos Locais (100% Gratuitos, Offline e Ilimitados)
-Se você quer rodar a IA sem gastar nada e sem precisar de internet:
-1. Instale o [Ollama](https://ollama.com/) no seu sistema.
-2. Abra o terminal e baixe um modelo de código ou raciocínio. Exemplos recomendados:
-   ```bash
-   ollama run qwen2.5-coder:7b      # Excelente para programação rápida
-   ollama run deepseek-r1:8b        # Excelente para raciocínio e matemática
-   ollama run llama3.2:3b           # Leve, ideal para notebooks modestos e Termux
-   ```
-3. Na Layla, clique no ícone de **Configurações (Engrenagem)** > **Modelos de IA** > **Adicionar Provedor**.
-4. Selecione **Ollama**, informe a URL local `http://127.0.0.1:11434/v1` e salve.
-
-#### 🔵 Opção B — Modelos em Nuvem de Alto Desempenho
-Se você prefere os modelos mais potentes do mundo com processamento em nuvem:
-1. Obtenha uma chave de API (`API Key`) no provedor de sua preferência:
-   - **DeepSeek:** [platform.deepseek.com](https://platform.deepseek.com/) *(Melhor custo-benefício para código)*
-   - **Google AI Studio:** [aistudio.google.com](https://aistudio.google.com/) *(Cota gratuita disponível para Gemini)*
-   - **Groq:** [console.groq.com](https://console.groq.com/) *(Velocidade ultrarrápida)*
-   - **OpenAI:** [platform.openai.com](https://platform.openai.com/) *(GPT-4o, GPT-o1)*
-   - **Anthropic:** [console.anthropic.com](https://console.anthropic.com/) *(Claude 3.7 Sonnet)*
-   - **OpenRouter:** [openrouter.ai](https://openrouter.ai/) *(Acesso a centenas de modelos em um só lugar)*
-2. Na Layla, clique em **Configurações** > **Modelos de IA** > **Adicionar Provedor**.
-3. Selecione o provedor, cole a sua **API Key** e clique em **Salvar Provedor**.
+| Ambiente / Dispositivo | Modo de Operacao | Camada de Interface | Dependencias Base |
+| :--- | :--- | :--- | :--- |
+| **Windows 10 / 11 (64 bits)** | Aplicativo Desktop Nativo | Microsoft WebView2 + Web Engine | Nenhuma (runtime Node.js isolado incluso no instalador) |
+| **Linux (Ubuntu, Debian, Fedora, Arch)** | Servidor Local + CLI Global | Navegador do Sistema (`xdg-open`) / Terminal | Node.js v22+ e PNPM |
+| **Android (via Termux)** | Ambiente Nativo Termux | Navegador Mobile (`termux-open-url`) / Shell | Pacotes Termux (`nodejs`, `tar`, `curl`) |
+| **iOS (iPhone e iPad)** | Web Client PWA / Acesso LAN | Safari / Chrome Mobile (PWA em tela cheia) | Conexao via rede local com o servidor da Layla |
+| **Ambientes Headless / CLI** | Linha de Comando Pura | Terminal / Scripts de Automacao / Pipelines | Node.js v22+ |
 
 ---
 
-### 3. Exemplos Práticos de Uso
+## 3. Suporte Universal a Provedores de Inteligencia Artificial
 
-Basta digitar naturalmente o que você precisa. A Layla analisa o pedido, traça um plano e executa:
+A assistente implementa suporte extensivo a modelos proprietarios e de codigo aberto, tanto locais quanto em nuvem:
 
-#### 💻 Desenvolvimento e Criação de Projetos:
-> *"Crie uma aplicação web em Node.js com Express e SQLite para gerenciamento de clientes, incluindo rotas CRUD completas e uma página HTML simples para testar."*
+### A. Modelos Locais e Offline (Gratuito, Privativo e Sem Internet)
+Permite executar tarefas de forma totalmente isolada sem consumo de rede ou custos por requisicao:
+- **Ollama:** Conexao com endpoint compativel `http://127.0.0.1:11434/v1`. Modelos recomendados: `qwen2.5-coder:7b`, `deepseek-r1:8b`, `llama3.2:3b`.
+- **LM Studio:** Servidor local compativel com protocolo OpenAI em `http://127.0.0.1:1234/v1`.
+- **Endpoints Customizados:** Compatibilidade com vLLM, LocalAI, Text Generation WebUI ou qualquer servidor compativel com a API OpenAI (`/v1/chat/completions`).
 
-#### 🐞 Correção de Bugs e Refatoração:
-> *"Leia o arquivo server.py da minha pasta de trabalho, identifique por que a conexão com o banco de dados está falhando e faça a correção necessária."*
-
-#### ⚙️ Automação e Terminal:
-> *"Verifique quais portas TCP estão abertas no meu sistema, procure por processos usando a porta 3080 e encerre-os se necessário."*
-
-#### 🔍 Análise Técnica & Engenharia Reversa (Modo Irrestrito v68):
-> *"Descompile o arquivo sample.bin localizado na minha pasta de trabalho, analise a tabela de strings, identifique o fluxo de validação da licença e gere uma documentação técnica do algoritmo."*
-
-#### 📱 No Android / Termux:
-> *"Escreva um script em Python que monitore a bateria do celular e salve um log a cada 10 minutos em ~/bateria.log."*
+### B. Provedores em Nuvem de Alto Desempenho
+Configuracao direta via Chave de API (`API Key`) persistida localmente de forma segura:
+- **DeepSeek:** Protocolo oficial para `deepseek-chat` (V3) e `deepseek-reasoner` (R1).
+- **OpenAI:** GPT-4o, GPT-4o-mini, GPT-o1, GPT-o3-mini.
+- **Anthropic:** Claude 3.7 Sonnet, Claude 3.5 Haiku, Claude 3.5 Sonnet.
+- **Google Gemini:** Gemini 2.0 Flash, Gemini 2.0 Pro.
+- **Groq:** Aceleracao por hardware LPU com latencia ultrabaixa.
+- **Mistral AI:** Mistral Large, Codestral.
+- **OpenRouter:** Roteamento unificado para centenas de arquiteturas abertas e proprietarias.
 
 ---
 
-## 📥 Guia de Instalação Passo a Passo
+## 4. Guia de Instalacao Passo a Passo
 
-### 1. 📱 Android (via Termux)
+### 1. Android (via Termux)
 
-Você pode rodar a Layla inteira no seu celular ou tablet Android sem precisar de root!
+Execucao direta no celular ou tablet Android sem necessidade de root.
 
-#### ⚡ Instalação Automática em 1 Linha (Recomendada):
-Abra o aplicativo **Termux** (instalado via [F-Droid](https://f-droid.org/en/packages/com.termux/)) e cole:
+#### Instalacao Automatica em 1 Linha (Recomendada):
+Abra o **Termux** (instalado via F-Droid) e execute:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/prudenciodev/Layla/main/install.sh | bash
 ```
 
-> **O que o script faz automaticamente:**
-> - Atualiza os pacotes e instala `nodejs`, `tar` e `curl`.
-> - Baixa o pacote universal oficial da release pública.
-> - Extrai e configura o ambiente em `~/layla`.
-> - Cria o comando global `layla` no seu Termux.
-> - Sincroniza o Motor Irrestrito v68 em `~/.layla/skills`.
-> - Abre o navegador do celular automaticamente em `http://127.0.0.1:3080`.
+O instalador realiza automaticamente:
+1. Atualizacao dos repositorios e instalacao de `nodejs`, `tar` e `curl`.
+2. Download do pacote oficial `Layla-linux-termux.tar.gz` da release publica.
+3. Extracao e configuracao estrutural em `~/layla`.
+4. Criacao do comando global `layla` no caminho de executaveis do Termux.
+5. Sincronizacao do Motor Irrestrito v68 em `~/.layla/skills`.
+6. Inicializacao do servidor e abertura automatica no navegador do smartphone.
 
-#### 🔄 Como abrir a Layla depois no Termux:
-Sempre que quiser abrir a Layla no futuro, basta abrir o Termux e digitar:
+#### Como Iniciar Novamente no Termux:
 ```bash
 layla
 ```
-*(Dica: Se quiser manter o servidor rodando em segundo plano mesmo com a tela apagada, digite `termux-wake-lock` no Termux).*
+*(Nota para operacao em background: execute `termux-wake-lock` no Termux para evitar suspensao pelo gerenciador de bateria do Android).*
 
 ---
 
-### 2. 🐧 Linux & WSL2 (Ubuntu, Debian, Fedora, Arch)
+### 2. Linux e WSL2 (Ubuntu, Debian, Fedora, Arch)
 
-No Linux, a Layla opera com servidor de alto desempenho acessível pelo seu navegador padrão.
-
-#### ⚡ Instalação Automática em 1 Linha (Recomendada):
-Abra o terminal e execute:
+#### Instalacao Automatica em 1 Linha (Recomendada):
 ```bash
 curl -fsSL https://raw.githubusercontent.com/prudenciodev/Layla/main/install.sh | bash
 ```
 
-#### 🔄 Como abrir a Layla depois no Linux:
-Basta digitar no terminal:
+#### Como Iniciar Novamente no Linux:
 ```bash
 layla
 ```
-O navegador abrirá automaticamente em `http://127.0.0.1:3080`.
 
-#### 📦 Instalação Manual (Alternativa):
+#### Instalacao Manual no Terminal:
 ```bash
-# 1. Instalar Node.js LTS (v22+) e ferramentas
+# 1. Dependencias do sistema
 sudo apt update && sudo apt install -y curl tar nodejs npm
 sudo npm install -g pnpm@11.7.0
 
-# 2. Baixar o pacote oficial
+# 2. Download do pacote de distribuicao
 curl -LO https://github.com/prudenciodev/Layla/releases/latest/download/Layla-linux-termux.tar.gz
 
-# 3. Extrair e iniciar
+# 3. Extracao e execucao
 mkdir -p ~/layla && tar -xzf Layla-linux-termux.tar.gz -C ~/layla
 cd ~/layla
 chmod +x iniciar-layla.sh
@@ -248,15 +217,16 @@ chmod +x iniciar-layla.sh
 
 ---
 
-### 3. 🪟 Windows 10 e Windows 11 (64-bits)
+### 3. Windows 10 e Windows 11 (64 bits)
 
-#### ⚡ Instalador Oficial Gráfico (.exe) [Recomendado]:
-1. Acesse a [Página de Releases da Layla](https://github.com/prudenciodev/Layla/releases/latest).
-2. Baixe o instalador oficial: **`Layla-Setup.exe`**.
-3. Dê dois cliques em `Layla-Setup.exe` e siga as instruções do assistente.
-4. Ao finalizar, clique no atalho **Layla** criado na sua Área de Trabalho ou no Menu Iniciar.
+#### Instalador Oficial Grafico (.exe) [Recomendado]:
+1. Acesse os [Releases Oficiais da Layla](https://github.com/prudenciodev/Layla/releases/latest).
+2. Baixe o instalador compilado: `Layla-Setup.exe`.
+3. Execute o instalador e conclua o assistente de instalacao.
+4. O instalador configura o runtime do Node.js isolado, o atalho na Area de Trabalho e no Menu Iniciar.
+5. Inicie a assistente pelo atalho **Layla**.
 
-#### 💻 Para Desenvolvedores (Código-Fonte):
+#### Execucao para Desenvolvedores (Codigo-Fonte):
 ```powershell
 git clone https://github.com/prudenciodev/Layla-cod-fonte.git
 cd Layla-cod-fonte
@@ -266,61 +236,81 @@ cd Layla-cod-fonte
 
 ---
 
-## 📦 O que a Ferramenta Instala no seu Sistema?
+### 4. iOS (iPhone e iPad)
 
-Para total transparência com o usuário, a Layla instala apenas o necessário para garantir máxima estabilidade:
+Devido a politicas de sandbox fechado do ecossistema Apple, a operacao no iOS ocorre via cliente Web responsivo (PWA) conectado a uma instancia de servidor da Layla ativa na rede ou nuvem:
 
-| Componente | Função | Localização |
-| :--- | :--- | :--- |
-| **Node.js LTS (v24)** | Motor de execução JavaScript de alta performance (isolado no Windows, sem afetar o sistema). | Pasta interna de instalação |
-| **Microsoft WebView2** | Renderizador visual leve baseado no motor Chromium nativo do Windows. | Nativo do Windows |
-| **Gerenciador PNPM** | Gerenciador rápido de dependências para as ferramentas e plugins da assistente. | Isolado internamente |
-| **Perfil do Usuário (`.layla`)** | Armazena configurações (`settings.yaml`), histórico de chats (`sessions/`) e skills personalizadas (`skills/`). | `~/.layla` ou `%USERPROFILE%\.layla` |
+1. Inicie a Layla no seu computador (Windows ou Linux) permitindo conexao na rede local:
+   - Defina a variavel de ambiente: `PRUDENCIO_HOST=0.0.0.0`
+   - Inicie o servidor: `layla`
+2. No iPhone ou iPad, abra o **Safari** e acesse o endereco da maquina:
+   `http://<IP_DO_SEU_COMPUTADOR>:3080`
+3. No Safari, toque no botao de compartilhamento e selecione **Adicionar a Tela de Inicio**.
+4. A Layla operara como um aplicativo independente em tela cheia com interface mobile responsiva e acesso total a ferramentas.
 
 ---
 
-## ❓ Perguntas Frequentes (FAQ) & Solução de Problemas
+## 5. Guia de Operacao e Casos de Uso
 
-### 1. A porta 3080 já está em uso, o que fazer?
-- **No Windows:** Execute o script `bin\liberar-portas.ps1` ou reinicie a máquina. O launcher da Layla já encerra processos órfãos automaticamente.
-- **No Linux/Termux:** Execute no terminal:
+### A. Configuracao de Provedores na Interface
+1. Abra a interface da Layla (`http://127.0.0.1:3080` ou aplicativo Desktop).
+2. Acesse o menu **Configuracoes** (icone de engrenagem) > **Modelos de IA**.
+3. Selecione o provedor desejado e insira a respectiva Chave de API ou a URL do endpoint local (ex.: Ollama).
+4. Clique em **Salvar Provedor**.
+
+### B. Gestao de Workspace
+Aponte a Layla para o diretorio de projeto desejado. Toda criacao de arquivos, leitura de codigo, edicao e comandos de terminal serao restritos e contextualizados dentro desse diretorio.
+
+### C. Exemplos de Comandos e Prompts Operacionais:
+- **Criacao de Aplicacoes:** *"Crie uma API RESTful em TypeScript com Fastify e Prisma, estruturando rotas, validadores e documentacao OpenAPI."*
+- **Refatoracao e Depuracao:** *"Analise o arquivo src/auth.service.ts, identifique falhas de tratamento de erro assincrono e refatore com tratamento consistente."*
+- **Automacao Operacional:** *"Inspecione os arquivos de log no diretorio ./logs, identifique mensagens com status HTTP 5xx e gere um relatorio analitico."*
+- **Auditoria Tecnica (Modo Irrestrito v68):** *"Analise o arquivo binario sample.bin, extraia a tabela de simbolos e reconstrua o pseudocodigo da funcao de validacao de licenca."*
+
+---
+
+## 6. Seguranca, Auditoria e Soberania de Dados
+
+- **Zero Coleta de Dados:** O projeto nao mantem servidores intermediarios de coleta, telemetria analitica ou rastreamento de comportamento.
+- **Integridade de Credenciais:** As chaves de API cadastradas pelo usuario sao armazenadas exclusivamente no arquivo local `settings.yaml` na maquina do usuario.
+- **Controle de Acesso em Rede:** Por definicao estrita de seguranca, a assistente inicia vinculada a `127.0.0.1` (localhost). Dispositivos externos na mesma rede fisica nao conseguem acessar a porta a menos que o operador altere voluntariamente a configuracao para `0.0.0.0`.
+
+---
+
+## 7. Diagnostico e Solucao de Problemas (FAQ)
+
+### Porta 3080 Ocupada
+- **No Windows:** Execute `bin\liberar-portas.ps1` no PowerShell ou utilize o script de encerramento do processo.
+- **No Linux / Termux:** Execute:
   ```bash
   kill $(lsof -t -i:3080) 2>/dev/null || fuser -k 3080/tcp 2>/dev/null
   ```
 
-### 2. Posso usar a Layla completamente sem internet?
-**Sim!** Instalando o [Ollama](https://ollama.com/) e baixando qualquer modelo local (como `qwen2.5-coder:7b` ou `deepseek-r1:8b`), toda a geração de texto e raciocínio ocorre 100% no processador e placa de vídeo da sua máquina, sem enviar 1 byte para a internet.
-
-### 3. Como atualizar para uma nova versão?
-- **No Windows:** Basta baixar o novo `Layla-Setup.exe` da página de releases e instalar por cima. Todas as suas configurações, conversas e chaves em `~/.layla` serão preservadas intactas.
-- **No Linux ou Termux:** Basta rodar novamente o comando de 1 linha:
+### Atualizacao para Novas Versoes
+- **No Windows:** Baixe o novo executavel `Layla-Setup.exe` e execute a instalacao. Os dados do usuario em `~/.layla` serao preservados integralmente.
+- **No Linux e Termux:** Reexecute o comando oficial de 1 linha:
   ```bash
   curl -fsSL https://raw.githubusercontent.com/prudenciodev/Layla/main/install.sh | bash
   ```
 
-### 4. Como acessar a Layla pelo celular se ela estiver rodando no computador?
-Se você tem a Layla rodando no seu computador e quer acessar pelo celular na mesma rede Wi-Fi:
-1. No computador, defina a variável de ambiente `PRUDENCIO_HOST=0.0.0.0`.
-2. No celular, abra o navegador e acesse `http://IP-DO-SEU-PC:3080` (descubra o IP do PC com `ipconfig` no Windows ou `ip a` no Linux).
-
-### 5. Como desinstalar completamente?
-- **No Windows:** Abra o Painel de Controle > Adicionar ou Remover Programas > selecione **Layla** e clique em Desinstalar. Se quiser apagar também o histórico e configurações, exclua a pasta `%USERPROFILE%\.layla`.
-- **No Linux ou Termux:** Remova as pastas com:
+### Desinstalacao Completa
+- **No Windows:** Desinstale via Painel de Controle > Programas e Recursos. Para remocao total de dados residuais, delete a pasta `%USERPROFILE%\.layla`.
+- **No Linux / Termux:** Execute:
   ```bash
-  rm -rf ~/layla ~/.layla ~/../usr/bin/layla ~/.local/bin/layla
+  rm -rf ~/layla ~/.layla /usr/local/bin/layla ~/.local/bin/layla
   ```
 
 ---
 
-## 📄 Licença e Créditos
+## 8. Licenca e Creditos
 
-Este projeto é desenvolvido com dedicação por **Prudencio Dev**.  
-Licenciado sob a licença [MIT](LICENSE).
+Projeto desenvolvido e mantido por **Prudencio Dev**.  
+Distribuido sob os termos da licenca [MIT](LICENSE).
 
-- 📸 **Instagram:** [@prudenciodev](https://instagram.com/prudenciodev)
-- 🎥 **YouTube:** [@prudenciodev](https://youtube.com/@prudenciodev)
-- 🐙 **Repositório Oficial:** [github.com/prudenciodev/Layla](https://github.com/prudenciodev/Layla)
+- **Instagram:** [@prudenciodev](https://instagram.com/prudenciodev)
+- **YouTube:** [@prudenciodev](https://youtube.com/@prudenciodev)
+- **Repositorio Oficial:** [github.com/prudenciodev/Layla](https://github.com/prudenciodev/Layla)
 
 <p align="center">
-  <sub>Layla AI — Desenvolvido com foco em liberdade, autonomia e privacidade.</sub>
+  <sub>Layla AI | Engenharia de Software e Automacao com Seguranca e Privacidade.</sub>
 </p>
