@@ -73,10 +73,11 @@ chmod +x "$INSTALL_DIR/iniciar-layla.sh"
 BIN_PATH=""
 if [ "$IS_TERMUX" = true ] && [ -d "/data/data/com.termux/files/usr/bin" ]; then
     BIN_PATH="/data/data/com.termux/files/usr/bin/layla"
-elif [ -d "$HOME/.local/bin" ]; then
-    BIN_PATH="$HOME/.local/bin/layla"
-elif [ -d "/usr/local/bin" ] && [ -w "/usr/local/bin" ]; then
+elif [ -w "/usr/local/bin" ]; then
     BIN_PATH="/usr/local/bin/layla"
+else
+    mkdir -p "$HOME/.local/bin"
+    BIN_PATH="$HOME/.local/bin/layla"
 fi
 
 if [ -n "$BIN_PATH" ]; then
@@ -85,7 +86,7 @@ if [ -n "$BIN_PATH" ]; then
 exec "$HOME/layla/iniciar-layla.sh" "$@"
 EOF
     chmod +x "$BIN_PATH"
-    echo "[OK] Comando 'layla' criado com sucesso em $BIN_PATH!"
+    echo "[OK] Comando 'layla' configurado em $BIN_PATH!"
 fi
 
 echo ""
