@@ -4,7 +4,7 @@ Assistente para modelos de IA, arquivos, skills e ferramentas locais.
 
 ## Download
 
-[Baixar instalador oficial v1.1.1](https://github.com/prudenciodev/Layla/releases/download/v1.1.1/Layla-Setup.exe)
+[Baixar instalador oficial v1.1.2](https://github.com/prudenciodev/Layla/releases/download/v1.1.2/Layla-Setup.exe)
 
 Windows 10/11 x64. A primeira instalação requer internet e baixa Node.js, WebView2 e dependências. Git, pnpm e conta GitHub não são necessários para instalar. Modelos de IA são configurados pelo usuário após a instalação.
 
@@ -22,7 +22,12 @@ O pacote contém preferências iniciais, sem contas, chaves ou histórico do des
 
 ## Verificação
 
-SHA-256 do instalador: `de9816c189265eb0f046e21cc04416ad1c1323de3b580c18b294ad62f1758965`
+SHA-256 do instalador: `23dfad4ee0b5ebfca17c9b563c5bb1cd71d02e7de26a90d3a8cb269d1bd60408`
+
+## Layla 1.1.2
+
+- **Inclusão Integral de Aplicação e Interface Pré-compiladas:** Inclusão dos binários empacotados (`agente/apps/cli/lib/bin.js`) e interface gráfica web (`agente/apps/web/dist/`) no pacote oficial do instalador, garantindo inicialização imediata e eliminando o erro de aplicação compilada ausente.
+- **Motor Irrestrito Nativo v68 em Modo Resiliente:** Compilação e exportação nativa em JavaScript ESM (`lib/index.js`, `lib/prompts.js`, `lib/skill.js`) com tolerância dinâmica de esquemas e auto-injeção contínua.
 
 ## Layla 1.1.1
 
