@@ -31,17 +31,45 @@ if [ "$IS_TERMUX" = true ]; then
     pkg install -y curl tar nodejs
     npm install -g pnpm@11.7.0 --silent 2>/dev/null || true
 else
+    # Auto-instalação de dependências em Linux caso estejam ausentes
+    if ! command -v node >/dev/null 2>&1 || ! command -v curl >/dev/null 2>&1 || ! command -v tar >/dev/null 2>&1; then
+        echo "[INFO] Verificando dependências do sistema (Node.js, curl, tar)..."
+        if [ "$(id -u)" -eq 0 ]; then
+            if command -v apt-get >/dev/null 2>&1; then
+                apt-get update -y && apt-get install -y curl tar nodejs npm
+            elif command -v dnf >/dev/null 2>&1; then
+                dnf install -y curl tar nodejs npm
+            elif command -v pacman >/dev/null 2>&1; then
+                pacman -Sy --noconfirm curl tar nodejs npm
+            elif command -v apk >/dev/null 2>&1; then
+                apk add --no-cache curl tar nodejs npm
+            fi
+        elif command -v sudo >/dev/null 2>&1; then
+            if command -v apt-get >/dev/null 2>&1; then
+                echo "[INFO] Solicitando permissão para instalar Node.js e ferramentas..."
+                sudo apt-get update -y && sudo apt-get install -y curl tar nodejs npm || true
+            elif command -v dnf >/dev/null 2>&1; then
+                sudo dnf install -y curl tar nodejs npm || true
+            elif command -v pacman >/dev/null 2>&1; then
+                sudo pacman -Sy --noconfirm curl tar nodejs npm || true
+            fi
+        fi
+    fi
+
     if ! command -v curl >/dev/null 2>&1 || ! command -v tar >/dev/null 2>&1; then
         echo "[ERRO] curl e tar são necessários. Instale-os com o gerenciador de pacotes da sua distribuição."
         exit 1
     fi
     if ! command -v node >/dev/null 2>&1; then
-        echo "[ERRO] Node.js v22+ não encontrado!"
-        echo "Instale o Node.js em: https://nodejs.org/ ou via apt: sudo apt install -y nodejs npm"
+        echo "[ERRO] Node.js não encontrado no sistema!"
+        echo "Em distribuições Debian/Ubuntu: sudo apt install -y nodejs npm"
+        echo "Em distribuições Fedora/RHEL: sudo dnf install -y nodejs npm"
+        echo "Em distribuições Arch Linux: sudo pacman -S nodejs npm"
+        echo "Ou instale diretamente de: https://nodejs.org/"
         exit 1
     fi
     if ! command -v pnpm >/dev/null 2>&1; then
-        echo "[INFO] Instalando pnpm..."
+        echo "[INFO] Configurando gerenciador pnpm..."
         npm install -g pnpm@11.7.0 --silent 2>/dev/null || sudo npm install -g pnpm@11.7.0 --silent 2>/dev/null || true
     fi
 fi
