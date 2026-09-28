@@ -25,11 +25,18 @@
 
 ---
 
-## Download Oficial (v1.1.4)
+## Download Oficial (v1.1.5)
 
-- **Windows (Instalador Oficial):** [Baixar Layla-Setup.exe](https://github.com/prudenciodev/Layla/releases/download/v1.1.4/Layla-Setup.exe) (`6a96109664be171161e39a0f39dba42ba3126aa4e2e144f81605d71b1caa0753`)
+- **Windows (Instalador Oficial):** [Baixar Layla-Setup.exe](https://github.com/prudenciodev/Layla/releases/download/v1.1.5/Layla-Setup.exe) (`330d8c694849a16210b409031427976ad0333abf35d1f0dd6f723433d357e270`)
 - **Linux e Termux / Android (Comando 1-Linha):** `curl -fsSL https://raw.githubusercontent.com/prudenciodev/Layla/main/install.sh | bash`
-- **Linux e Termux (Download Manual do Arquivo):** [Baixar Layla-linux-termux.tar.gz](https://github.com/prudenciodev/Layla/releases/download/v1.1.4/Layla-linux-termux.tar.gz)
+- **Linux e Termux (Download Manual do Arquivo):** [Baixar Layla-linux-termux.tar.gz](https://github.com/prudenciodev/Layla/releases/download/v1.1.5/Layla-linux-termux.tar.gz)
+
+## Layla 1.1.5
+
+- **Resolução Definitiva de Dependências & Boot Monorepo:** Inclusão de `.npmrc` com hoisting (`shamefully-hoist=true`, `auto-install-peers=true`) e remoção da flag `--prod` em `02_Instalar_Dependencias.bat` e `iniciar-layla.sh`, eliminando em definitivo o erro `Cannot find package '@deepseek-ai/cordis'` no Windows, Linux e Android/Termux.
+- **Atualizador Automático Confiável (`bin/atualizar.ps1`):** Validação de integridade direta por hash SHA-256 oficial contra `version.json`, permitindo atualizações in-place perfeitas; correção de extração delta com sobrescrita de arquivos em execução.
+- **Seleção e Troca Fluida de Modelos de IA:** Resolução do travamento do seletor de modelos no composer (fechamento automático de menu sem falsos erros), desativação de sobreposição agressiva de seleção manual e sanitização automática de `reasoningEffort` para modelos incompatíveis (evitando rejeições e código vermelho no envio de mensagens).
+- **Eliminação de Duplicidades em Prompts:** Remoção de listeners concorrentes no motor irrestrito nativo (`layla-unrestricted`), mantendo injeção única, limpa e padronizada no prompt de sistema.
 
 ## Layla 1.1.4
 
@@ -162,92 +169,146 @@ Configuracao direta via Chave de API (`API Key`) gravada unicamente no arquivo l
 
 ---
 
-## 4. Guia de Instalacao Passo a Passo
+## 4. Guia Completo e Didático de Instalação (Passo a Passo do Zero)
 
-### 1. Windows 10 e Windows 11 (64 bits)
-
-A instalacao no Windows e completamente automatizada atraves de instalador grafico oficial:
-
-1. Acesse a pagina de [Releases Oficiais da Layla](https://github.com/prudenciodev/Layla/releases/latest).
-2. Baixe o instalador oficial: **`Layla-Setup.exe`**.
-3. De um duplo clique em `Layla-Setup.exe` e conclua o assistente de instalacao na tela.
-4. O instalador cuida de toda a configuracao interna (isolando o ambiente Node.js sem alterar suas variaveis globais do Windows).
-5. Ao concluir, abra o atalho **Layla** criado na Area de Trabalho ou no Menu Iniciar.
+Abaixo está o manual definitivo para instalar e utilizar a Layla em qualquer sistema operacional, mesmo que você nunca tenha aberto um terminal ou nunca tenha utilizado o Termux no celular.
 
 ---
 
-### 2. Android (via Termux)
+### 🖥️ 1. Windows 10 e Windows 11 (64 bits) — Computador ou Notebook
 
-Voce pode rodar a Layla inteira diretamente no seu smartphone ou tablet Android sem precisar de root:
+A instalação no Windows é 100% gráfica, rápida e automatizada por instalador oficial:
 
-#### Instalacao Automatica em 1 Linha (Recomendada):
-Abra o aplicativo **Termux** (instalado atraves do [F-Droid](https://f-droid.org/en/packages/com.termux/)) e execute:
+#### Passo 1: Download do Instalador Oficial
+1. Acesse a página de [Releases Oficiais da Layla](https://github.com/prudenciodev/Layla/releases/latest).
+2. Baixe o instalador compilado: **`Layla-Setup.exe`**.
+
+#### Passo 2: Execução e Instalação
+1. Dê um duplo clique no arquivo `Layla-Setup.exe`.
+2. **Aviso do Windows SmartScreen:** Por ser um aplicativo novo de desenvolvimento independente, o Windows pode exibir uma tela azul dizendo *"O Windows protegeu o seu computador"*.
+   - Basta clicar no texto **"Mais informações"** e em seguida clicar no botão **"Executar assim mesmo"**.
+3. Avance as telas do assistente clicando em **Avançar** e depois em **Instalar**.
+4. O instalador cuida de tudo sozinho: prepara o ambiente Node.js de forma totalmente isolada (sem poluir as variáveis de ambiente globais da sua máquina), configura o Microsoft WebView2 e cria o atalho oficial.
+
+#### Passo 3: Abrindo e Utilizando a Layla
+1. Dê um duplo clique no atalho **Layla** na sua Área de Trabalho ou procure por **Layla** no Menu Iniciar.
+2. **Aviso do Firewall do Windows:** Na primeira execução, o Windows perguntará se deseja permitir que o aplicativo se comunique na rede. Clique em **"Permitir acesso"**.
+3. A janela nativa abrirá imediatamente pronta para uso!
+
+---
+
+### 📱 2. Android (via Termux) — Guia Definitivo do Início ao Fim
+
+Você pode transformar qualquer celular ou tablet Android em um servidor completo de inteligência artificial autônoma sem precisar de root e sem danificar o sistema.
+
+> [!CAUTION]
+> **ATENÇÃO CRUCIAL:** NUNCA instale o Termux pela Google Play Store! A versão da Play Store foi abandonada e descontinuada em 2020. Se instalada pela Play Store, os comandos falharão com erros de repositório 404.
+
+#### Passo 1: Como Baixar e Instalar o Termux Correto
+1. No seu celular Android, abra o navegador (Chrome, Brave, Samsung Internet, etc.).
+2. Acesse a página oficial do **F-Droid** do Termux: [f-droid.org/packages/com.termux/](https://f-droid.org/en/packages/com.termux/).
+3. Role a página para baixo até a seção de downloads e clique em **"Download APK"** (ou baixe diretamente o instalador APK oficial do [GitHub Releases do Termux](https://github.com/termux/termux-app/releases/latest) escolhendo o arquivo que termina em `arm64-v8a.apk` ou `universal.apk`).
+4. Quando o download terminar, toque na notificação para instalar o aplicativo.
+5. Se o Android pedir autorização para *"Instalar apps desconhecidos a partir desta fonte"*, clique em **Configurações** e ative a chavinha de permissão. Conclua a instalação.
+
+#### Passo 2: Primeira Configuração do Termux (Comandos Básicos)
+1. Abra o aplicativo **Termux** no seu celular. Você verá uma tela preta com letras e um cursor verde piscando.
+2. **Permitir acesso ao armazenamento:** Digite o comando abaixo e aperte a tecla **Enter** do teclado virtual:
+   ```bash
+   termux-setup-storage
+   ```
+   Uma janela pop-up do Android aparecerá perguntando se permite que o Termux acesse fotos e arquivos. Toque em **Permitir**.
+3. **Evitar que o Android feche o app em segundo plano:** Digite o comando:
+   ```bash
+   termux-wake-lock
+   ```
+   *(Uma notificação com o ícone do Termux aparecerá na barra de status indicando que o modo de vigília está ativo).*
+4. **Atualizar os pacotes do Termux:** Digite o comando abaixo e aperte Enter:
+   ```bash
+   pkg update -y && pkg upgrade -y
+   ```
+   *(Se durante a atualização o terminal pausar perguntando `default=N` ou algo similar, basta apertar **Enter** no teclado para manter o padrão).*
+
+#### Passo 3: Instalando a Layla com 1 Único Comando
+Agora que o Termux está pronto, copie e cole o comando oficial de instalação em 1 linha e pressione **Enter**:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/prudenciodev/Layla/main/install.sh | bash
 ```
 
-**O que o comando realiza automaticamente:**
-1. Atualiza os repositorios e instala `nodejs`, `tar` e `curl`.
-2. Baixa o pacote oficial `Layla-linux-termux.tar.gz` da release publica do GitHub.
-3. Extrai e prepara a aplicacao no diretorio `~/layla`.
-4. Cria o comando global `layla` no Termux.
-5. Configura o Motor Irrestrito v68 em `~/.layla/skills`.
-6. Inicia o servidor local e abre o navegador do smartphone em `http://127.0.0.1:3080`.
+**O que o instalador faz automaticamente para você:**
+- Instala o Node.js LTS, curl e utilitários de descompactação.
+- Baixa o pacote oficial otimizado da Layla direto do GitHub.
+- Descompacta e cria a estrutura no diretório `~/layla`.
+- Cria o comando global `layla` no sistema.
+- Configura o Motor Irrestrito v68 em `~/.layla/skills`.
+- Inicia o servidor local e abre o navegador do seu celular automaticamente no endereço `http://127.0.0.1:3080`.
 
-#### Como Iniciar Novamente no Termux:
-Basta abrir o Termux e digitar:
-```bash
-layla
-```
-*(Dica: Se quiser manter o servidor ativo com a tela do celular apagada, digite `termux-wake-lock` antes de iniciar).*
+#### Passo 4: Criando o Atalho de App no Celular
+1. Quando o navegador abrir na interface da Layla em `http://127.0.0.1:3080`, toque no **menu de 3 pontinhos** do Chrome (canto superior direito).
+2. Toque na opção **"Adicionar à tela inicial"** ou **"Instalar aplicativo"**.
+3. O ícone da Layla aparecerá na grade de aplicativos do seu celular, funcionando como um app nativo em tela cheia!
+
+#### Passo 5: Como Iniciar a Layla no Dia a Dia
+Sempre que reiniciar o celular ou fechar o app, para ligar a Layla novamente:
+1. Abra o **Termux**.
+2. Digite apenas:
+   ```bash
+   layla
+   ```
+3. Pronto! A Layla iniciará e o navegador abrirá automaticamente.
 
 ---
 
-### 3. Linux e WSL2 (Ubuntu, Debian, Fedora, Arch)
+### 🐧 3. Linux e WSL2 (Ubuntu, Debian, Fedora, Arch Linux, Alpine, etc.)
 
-#### Instalacao Automatica em 1 Linha (Recomendada):
-Abra o terminal e execute:
+No Linux, a instalação é instantânea e suporta qualquer distribuição moderna:
+
+#### Passo 1: Abrir o Terminal
+Abra o terminal de sua preferência (`Ctrl + Alt + T`).
+
+#### Passo 2: Executar o Instalador Oficial
+Cole o comando abaixo e pressione **Enter**:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/prudenciodev/Layla/main/install.sh | bash
 ```
 
-#### Como Iniciar Novamente no Linux:
-Basta digitar no terminal:
+**Compatibilidade de pacotes automática:**
+- O script identifica automaticamente seu gerenciador (`apt`, `dnf`, `pacman`, `zypper` ou `apk`).
+- Garante a presença do Node.js 20+ e utilitários de descompactação.
+- Cria o executável global `/usr/local/bin/layla` (ou em `~/.local/bin/layla` caso não use `sudo`).
+- Lança o navegador padrão (`xdg-open`) conectado à interface web local.
+
+#### Passo 3: Como Iniciar no Dia a Dia
+Basta abrir qualquer terminal e digitar:
 ```bash
 layla
-```
-O navegador padrao sera aberto automaticamente em `http://127.0.0.1:3080`.
-
-#### Instalacao Manual (Alternativa):
-```bash
-# 1. Dependencias basicas
-sudo apt update && sudo apt install -y curl tar nodejs npm
-sudo npm install -g pnpm@11.7.0
-
-# 2. Download do pacote oficial
-curl -LO https://github.com/prudenciodev/Layla/releases/latest/download/Layla-linux-termux.tar.gz
-
-# 3. Extracao e execucao
-mkdir -p ~/layla && tar -xzf Layla-linux-termux.tar.gz -C ~/layla
-cd ~/layla
-chmod +x iniciar-layla.sh
-./iniciar-layla.sh
 ```
 
 ---
 
-### 4. iOS (iPhone e iPad)
+### 🍏 4. iOS (iPhone e iPad) — Acesso e Modo PWA em Tela Cheia
 
-No iOS, a assistente opera como um Progressive Web App (PWA) conectado a uma instancia da Layla em execucao no seu computador ou servidor na mesma rede:
+Devido às políticas da Apple, o sistema iOS não permite que servidores Node.js permaneçam rodando livremente em segundo plano. Por isso, a Layla opera no iPhone/iPad através do modo **Web Client PWA**, conectando-se à instância da Layla que está rodando no seu computador, notebook ou servidor.
 
-1. No computador onde a Layla esta instalada, permita o acesso na rede local definindo a variavel de host:
-   - No terminal ou PowerShell: defina `PRUDENCIO_HOST=0.0.0.0`
-   - Inicie a Layla: `layla` (ou execute pelo atalho).
-2. No iPhone ou iPad conectado ao mesmo Wi-Fi, abra o **Safari** e digite o endereco local do computador:
-   `http://<IP_DO_SEU_COMPUTADOR>:3080`
-   *(Descubra o IP digitando `ipconfig` no Windows ou `ip a` no Linux).*
-3. No Safari, toque no icone de **Compartilhar** e selecione **Adicionar a Tela de Inicio**.
-4. O icone da Layla sera criado na tela do iOS e abrira em tela cheia como um aplicativo independente.
+#### Opção A: Conectando na mesma rede Wi-Fi (Em Casa ou no Trabalho)
+1. No seu computador (Windows ou Linux), inicie a Layla normalmente.
+2. Na barra superior da interface da Layla no computador, clique no ícone de **"Acesso Celular"**.
+3. Uma janela com um **QR Code grande** e o endereço de rede (ex.: `http://192.168.1.100:3080`) será exibida.
+4. No seu **iPhone ou iPad**:
+   - Abra o app da **Câmera** nativa do iOS.
+   - Aponte para o QR Code na tela do computador e toque na notificação amarela que sugere abrir no Safari.
+5. O Safari abrirá a interface completa da Layla conectada em tempo real com seu computador.
+6. **Transformar em App na Tela Inicial (PWA):**
+   - Na barra inferior do Safari, toque no botão de **Compartilhar** (o quadrado com uma seta para cima).
+   - Role as opções para baixo e toque em **"Adicionar à Tela de Início"** (*Add to Home Screen*).
+   - Toque em **Adicionar** no canto superior direito.
+7. O ícone da Layla ficará na tela inicial do seu iPhone e abrirá sem barras do navegador, em tela cheia idêntico a um aplicativo da App Store!
+
+#### Opção B: Acesso Remoto de Qualquer Lugar do Mundo (Túnel Cloudflare)
+1. Na tela do computador, dentro do menu de Acesso Celular, certifique-se de que o **"Túnel Seguro Cloudflare"** está ativo.
+2. A Layla gerará um link criptografado HTTPS terminado em `.trycloudflare.com`.
+3. Abra esse link no Safari do seu iPhone de qualquer lugar do mundo (usando 4G, 5G ou outro Wi-Fi).
+4. O pareamento é seguro, com criptografia de ponta a ponta e sem necessidade de abrir portas no roteador de sua casa.
 
 ---
 
