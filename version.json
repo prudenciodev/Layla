@@ -3,7 +3,7 @@
   "name": "Layla",
   "published_at": "2026-09-29T13:13:00.000Z",
   "download_url": "https://github.com/prudenciodev/Layla/releases/download/v1.1.5/Layla-Setup.exe",
-  "sha256": "9e4e81e131831173ccc3b758f5ebf568b40d51fdf930eff64070d9b8307a4740",
-  "size": 7867843,
-  "changelog": "Instalacao rapida e auto-recuperacao nativa de dependencias no launcher, liberacao automatica da porta 3080 e eliminacao de falhas ao iniciar."
+  "sha256": "7dadd185417549ade215a2fcd9eb3f1ecb2d34837f65d76a43db2023e59ef111",
+  "size": 7868920,
+  "changelog": "Launcher 100% silencioso sem abertura de janelas de terminal, protecao estrita anti-looping de auto-recuperacao e liberacao automatica da porta 3080."
 }
