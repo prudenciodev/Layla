@@ -3,7 +3,7 @@
   "name": "Layla",
   "published_at": "2026-09-29T13:13:00.000Z",
   "download_url": "https://github.com/prudenciodev/Layla/releases/download/v1.1.5/Layla-Setup.exe",
-  "sha256": "315d6b28c3fb703521851be8063e50b8482b326ae00a47f353658194d69044bb",
-  "size": 7866826,
+  "sha256": "5a42d3caa26653cd4aadeeeb6ee4190a285ab814b171f15629aba64b05863888",
+  "size": 7866838,
   "changelog": "Resolucao definitiva de dependencias monorepo (@deepseek-ai/cordis), correcao no atualizador automatico com suporte a instalador local e sobrescrita delta, estabilizacao na troca de modelos de IA sem travas nem rejeicao de reasoning, e eliminacao de prompts duplicados."
 }
