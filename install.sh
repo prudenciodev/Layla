@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================================
-# Layla AI v1.1.7 — Instalador Oficial Multiplataforma (Linux, macOS, Android/Termux)
+# Layla AI v1.1.8 — Instalador Oficial Multiplataforma (Linux, macOS, Android/Termux)
 # Desenvolvido por: Prudencio Dev | Instagram: @prudenciodev | YouTube: @prudenciodev
 # ============================================================================
 
@@ -10,7 +10,7 @@ REPO="prudenciodev/Layla"
 INSTALL_DIR="$HOME/layla"
 
 echo "============================================================================"
-echo " Layla AI v1.1.7 — Instalador Oficial (Linux & Termux)"
+echo " Layla AI v1.1.8 — Instalador Oficial (Linux & Termux)"
 echo " Desenvolvido por: Prudencio Dev | @prudenciodev"
 echo "============================================================================"
 echo ""

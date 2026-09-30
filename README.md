@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Versao-1.1.7-1f6feb?style=flat-square&logo=github" alt="Versao 1.1.7" />
+  <img src="https://img.shields.io/badge/Versao-1.1.8-1f6feb?style=flat-square&logo=github" alt="Versao 1.1.8" />
   <img src="https://img.shields.io/badge/Licenca-MIT-2ea44f?style=flat-square" alt="Licenca MIT" />
   <img src="https://img.shields.io/badge/Plataformas-Windows%20|%20Linux%20|%20Android%20|%20iOS%20|%20CLI-0969da?style=flat-square" alt="Plataformas" />
   <img src="https://img.shields.io/badge/Privacidade-Zero%20Telemetria-success?style=flat-square" alt="Zero Telemetria" />
@@ -25,11 +25,18 @@
 
 ---
 
-## Download Oficial (v1.1.7)
+## Download Oficial (v1.1.8)
 
-- **Windows (Instalador Oficial):** [Baixar Layla-Setup.exe](https://github.com/prudenciodev/Layla/releases/download/v1.1.7/Layla-Setup.exe) (`37eb739fefa0dc4453b89bfd4af1d26b3d129d24186b2fcac3f7692393641c15`)
+- **Windows (Instalador Oficial):** [Baixar Layla-Setup.exe](https://github.com/prudenciodev/Layla/releases/download/v1.1.8/Layla-Setup.exe) (`364d976b6882f6d3ad0f3468cc6b4fbf8b9ebe283af45739af5a1d7ae8d9a66b`)
 - **Linux e Termux / Android (Comando 1-Linha):** `curl -fsSL https://raw.githubusercontent.com/prudenciodev/Layla/main/install.sh | bash`
-- **Linux e Termux (Download Manual do Arquivo):** [Baixar Layla-linux-termux.tar.gz](https://github.com/prudenciodev/Layla/releases/download/v1.1.7/Layla-linux-termux.tar.gz)
+- **Linux e Termux (Download Manual do Arquivo):** [Baixar Layla-linux-termux.tar.gz](https://github.com/prudenciodev/Layla/releases/download/v1.1.8/Layla-linux-termux.tar.gz)
+
+## Layla 1.1.8
+
+- **Resolução de Inicialização do Launcher e Links Monorepo:** Correção definitiva do erro `ERR_MODULE_NOT_FOUND` no arranque de `Layla.exe` através de auto-recuperação com vinculação forçada de pacotes internos (`@prudencio/*`) e sincronização de reparse points no Windows.
+- **Logging Thread-Safe no Launcher Nativo:** Implementação de lock de sincronização em `App.Log` e `LaylaWindow.Log`, eliminando colisões de I/O (`IOException`) durante inicializações concorrentes de streams assíncronos.
+- **Relatório Completo de Exceções no Diálogo de Erro:** Exibição preservada dos primeiros 600 caracteres do erro original (sem truncar a mensagem principal do Node.js).
+- **Validação Estrita de Integridade Pré-Start:** Verificação obrigatória da presença e integridade de `package.json` dos componentes internos da CLI antes de tentar disparar o processo Node.js.
 
 ## Layla 1.1.7
 
