@@ -1,9 +1,9 @@
 {
-  "version": "1.1.5",
+  "version": "1.1.6",
   "name": "Layla",
-  "published_at": "2026-09-29T13:13:00.000Z",
-  "download_url": "https://github.com/prudenciodev/Layla/releases/download/v1.1.5/Layla-Setup.exe",
-  "sha256": "cd62d00ec7ebf0c917c14a1dea792ff6b994ecd3a313f3de7f342eed8ba6062d",
-  "size": 7867948,
-  "changelog": "Launcher 100% silencioso sem abertura de janelas de terminal, protecao estrita anti-looping de auto-recuperacao e liberacao automatica da porta 3080."
+  "published_at": "2026-09-30T00:35:00.000Z",
+  "download_url": "https://github.com/prudenciodev/Layla/releases/download/v1.1.6/Layla-Setup.exe",
+  "sha256": "ab25dda9bf8bcbcaeaf6d2b0129371cd5e2b9d67792ff4570d24e07b70273987",
+  "size": 7868054,
+  "changelog": "Instalacao ultrarrapida de dependencias de producao (--prod --no-optional), resolucao de modulos NODE_PATH fortalecida e protecao anti-bloqueio no launcher nativo."
 }
