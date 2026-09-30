@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Versao-1.1.4-1f6feb?style=flat-square&logo=github" alt="Versao 1.1.4" />
+  <img src="https://img.shields.io/badge/Versao-1.1.7-1f6feb?style=flat-square&logo=github" alt="Versao 1.1.7" />
   <img src="https://img.shields.io/badge/Licenca-MIT-2ea44f?style=flat-square" alt="Licenca MIT" />
   <img src="https://img.shields.io/badge/Plataformas-Windows%20|%20Linux%20|%20Android%20|%20iOS%20|%20CLI-0969da?style=flat-square" alt="Plataformas" />
   <img src="https://img.shields.io/badge/Privacidade-Zero%20Telemetria-success?style=flat-square" alt="Zero Telemetria" />
