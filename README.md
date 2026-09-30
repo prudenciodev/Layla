@@ -27,7 +27,7 @@
 
 ## Download Oficial (v1.1.8)
 
-- **Windows (Instalador Oficial):** [Baixar Layla-Setup.exe](https://github.com/prudenciodev/Layla/releases/download/v1.1.8/Layla-Setup.exe) (`861fe4cdaff0a4b1b2c1f0b2b5013ab6c16614eee2f912866db44cc3b80b6b7c`)
+- **Windows (Instalador Oficial):** [Baixar Layla-Setup.exe](https://github.com/prudenciodev/Layla/releases/download/v1.1.8/Layla-Setup.exe) (`8c8bc18ea7cdc36e5dccbb9664a4eada08ad58dffc0e20851db1e80d4862ff00`)
 - **Linux e Termux / Android (Comando 1-Linha):** `curl -fsSL https://raw.githubusercontent.com/prudenciodev/Layla/main/install.sh | bash`
 - **Linux e Termux (Download Manual do Arquivo):** [Baixar Layla-linux-termux.tar.gz](https://github.com/prudenciodev/Layla/releases/download/v1.1.8/Layla-linux-termux.tar.gz)
 
