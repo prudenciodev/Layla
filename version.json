@@ -3,7 +3,7 @@
   "name": "Layla",
   "published_at": "2026-09-30T00:35:00.000Z",
   "download_url": "https://github.com/prudenciodev/Layla/releases/download/v1.1.6/Layla-Setup.exe",
-  "sha256": "ab25dda9bf8bcbcaeaf6d2b0129371cd5e2b9d67792ff4570d24e07b70273987",
-  "size": 7868054,
-  "changelog": "Instalacao ultrarrapida de dependencias de producao (--prod --no-optional), resolucao de modulos NODE_PATH fortalecida e protecao anti-bloqueio no launcher nativo."
+  "sha256": "1b55246a35445c7bf9f9d1c9eb9557b1c1c481ec5eb825a25828a9dbe5677cc6",
+  "size": 7868198,
+  "changelog": "Resolucao estrita de dependencias do monorepo e runtime Node.js, configuracao de NODE_PATH e protecao contra travamento no launcher nativo."
 }
